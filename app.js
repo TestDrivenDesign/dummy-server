@@ -16,12 +16,10 @@ app.post('/api/image', upload.single('file'), (req, res) => {
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
-  
+  const prediction = get_skin_prediction(req.file)
 
-  
-  res.json({req:req});
+  res.json({ type: prediction });
 });
-
 
 
 
