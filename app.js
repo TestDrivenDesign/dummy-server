@@ -18,8 +18,18 @@ app.post('/api/image', upload.single('file'), (req, res) => {
 
   const prediction = get_skin_prediction(req.file)
 
-  res.json({ type: prediction });
+  // res.json({ type: prediction });
+  res.json({req:req});
 });
+// app.post('/api/image', upload.single('file'), (req, res) => {
+//   if (!req.file) {
+//     return res.status(400).json({ error: 'No file uploaded' });
+//   }
+
+//   const prediction = get_skin_prediction(req.file)
+
+//   res.json({ type: prediction });
+// });
 
 
 
