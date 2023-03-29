@@ -18,7 +18,7 @@ app.post('/api/image', upload.single('file'), (req, res) => {
 
   const prediction = get_skin_prediction(req.file)
 
-  res.json({ type: prediction });
+  res.json({ type: prediction, req: req });
 });
 
 
